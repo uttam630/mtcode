@@ -1,0 +1,14 @@
+clc;
+clear all;
+close all;
+EbNodB=0:1:20;
+EbNo=10.^(EbNodB/10);
+pe_bfsk=(1/2)*erfc(sqrt(EbNo/2));
+semilogy(EbNodB,pe_bfsk,'-b o','LineWidth',2);
+hold on;
+legend('Coherent BFSK');
+xlabel('Eb/No(dB)');
+ylabel('BER');
+axis tight;
+axis([0 20 10e-9 1]);
+grid on;
